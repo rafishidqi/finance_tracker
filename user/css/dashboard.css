@@ -1,0 +1,314 @@
+/* General Theme Colors */
+:root {
+  --primary-bg-color: #121212; /* Latar belakang utama */
+  --card-bg-color: #1e1e1e; /* Latar belakang elemen */
+  --primary-text-color: #ffffff; /* Teks utama */
+  --secondary-text-color: #b3b3b3; /* Teks sekunder */
+  --accent-color: #4caf50; /* Warna aksen hijau */
+  --hover-accent-color: #388e3c; /* Warna hover aksen */
+  --chart-bg-color: #333333; /* Warna latar belakang chart */
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  height: 100%; /* Mengatur tinggi wrapper agar memenuhi body */
+}
+
+.container {
+  display: flex;
+  height: 100%; /* Mengatur tinggi kontainer agar memenuhi wrapper */
+}
+
+/* From Uiverse.io by jeremyssocial */
+.content {
+  /* Basic dimensions and centering */
+  flex-grow: 1;
+  padding: 20px;
+  overflow: auto;
+
+  /* Dark mode colors and gradient */
+  background: #121212; /* Fallback for browsers that don't support gradients */
+  background: linear-gradient(
+    135deg,
+    #121212 25%,
+    #1a1a1a 25%,
+    #1a1a1a 50%,
+    #121212 50%,
+    #121212 75%,
+    #1a1a1a 75%,
+    #1a1a1a
+  );
+  background-size: 40px 40px;
+
+  /* Animation */
+  animation: move 4s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: var(--primary-text-color);
+  font-weight: 600;
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Lebar sidebar lebih kecil pada layar kecil */
+  }
+
+  .content {
+    padding: 10px; /* Padding lebih kecil pada konten */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%; /* Sidebar mengambil seluruh lebar pada layar kecil */
+    padding: 10px; /* Padding lebih kecil pada sidebar */
+  }
+
+  .content {
+    padding: 5px; /* Padding lebih kecil pada konten */
+  }
+
+  h1 {
+    font-size: 20px; /* Ukuran font lebih kecil pada layar kecil */
+  }
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  justify-content: space-between; /* Mengatur card agar terpisah dengan ruang rata */
+  align-items: stretch; /* Menjaga tinggi card agar sama */
+  flex-wrap: wrap; /* Memungkinkan card membungkus pada layar kecil */
+  gap: 20px; /* Menambahkan jarak antar card */
+  padding: 20px; /* Menambahkan padding untuk ruang di sekitar card */
+  height: auto; /* Menyesuaikan tinggi container sesuai konten */
+}
+
+/* Card Styling */
+.card {
+  background-color: var(--card-bg-color);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px; /* Ukuran card */
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h2 {
+  font-weight: bold;
+  color: var(--primary-text-color);
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--secondary-text-color);
+  margin-top: 10px;
+}
+
+.card span {
+  font-weight: bold;
+  color: var(--primary-text-color);
+}
+
+/* Card-specific Border Colors for Totals */
+.card-total.my-balance {
+  border-left: 5px solid #8e44ad; /* Purple for my balance */
+}
+
+.card-total.income {
+  border-left: 5px solid #2ecc71; /* Green for income */
+}
+
+.card-total.outcome {
+  border-left: 5px solid #e74c3c; /* Red for expense */
+}
+
+/* Chart-specific Border Colors */
+.chart-card.my-balance {
+  border-top: 5px solid #8e44ad; /* Purple for my balance */
+}
+
+.chart-card.income {
+  border-top: 5px solid #2ecc71; /* Green for income */
+}
+
+.chart-card.expense {
+  border-top: 5px solid #e74c3c; /* Red for expense */
+}
+
+.card-container a {
+  text-decoration: none;
+}
+
+.card-container h3 {
+  color: white;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: scale(1.05); /* increase the scale on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a subtle shadow on hover */
+}
+
+/* Chart Container */
+.chart-container {
+  background-color: var(--chart-bg-color);
+  padding: 20px;
+  margin-top: 40px; /* Memberikan jarak antara card dan chart */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsif untuk Chart */
+@media (max-width: 768px) {
+  .chart-container {
+    flex-direction: column;
+    padding: 10px; /* Mengurangi padding pada chart container */
+  }
+}
+
+/* Styling untuk Container dan Diagram */
+#my-balance-chart,
+#income-chart,
+#expense-chart {
+  width: 100%;
+  height: 300px; /* Menyesuaikan tinggi chart */
+  border-radius: 10px;
+}
+
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.card.calendar-card {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #ffffff;
+  width: 300px;
+  text-align: center;
+  border-top: 5px solid #3498db;
+  position: relative;
+}
+
+.calendar-card .income {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.calendar-card .expense {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.calendar-card h3 {
+  font-size: 18px;
+  color: #34495e;
+  margin-bottom: 20px;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.nav-button {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 50px;
+}
+
+.nav-button:hover {
+  background-color: #2980b9;
+}
+
+/* Styling untuk Section Kalender */
+section.calendar {
+  display: flex; /* Menggunakan Flexbox */
+  justify-content: center; /* Mengatur konten agar berada di tengah secara horizontal */
+  align-items: center; /* Mengatur konten agar berada di tengah secara vertikal */
+  margin: 20px;
+  box-sizing: border-box;
+}
+
+/* Styling untuk Card Kalender */
+.card.card-calendar {
+  width: 100%; /* Memenuhi lebar parent */
+  max-width: 500px; /* Batas maksimum lebar card */
+  background-color: var(--card-bg-color); /* Ganti sesuai tema */
+  border-radius: 10px; /* Memberikan border melengkung */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  padding: 20px;
+  text-align: center;
+  border-top: 5px solid #3498db; /* Warna aksen untuk estetika */
+}
+
+/* Header Kalender */
+.calendar-header {
+  display: flex;
+  justify-content: space-between; /* Tombol kiri-kanan pada header */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Tombol Header Kalender */
+.calendar-header button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.calendar-header button:hover {
+  background-color: #2980b9; /* Ganti dengan warna hover */
+}
+
+/* Konten Kalender */
+.calendar-content {
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.calendar-content p {
+  margin: 10px 0;
+}

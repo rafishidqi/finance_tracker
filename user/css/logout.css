@@ -1,0 +1,110 @@
+/* Container untuk modal yang responsif dan berada di tengah */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Membungkus card ke baris baru jika ruang tidak cukup */
+  gap: 20px; /* Jarak antar card */
+  padding: 20px;
+  justify-content: center; /* Menjaga card di tengah secara horizontal */
+  align-items: center; /* Menjaga card di tengah secara vertikal */
+  width: 100%; /* Menggunakan 100% lebar layar */
+  max-width: 70%; /* Maksimum lebar container adalah 70% dari lebar halaman */
+  margin: 0 auto; /* Membuat container berada di tengah halaman */
+  overflow: auto;
+  height: 100vh; /* Menjaga container modal mengisi seluruh tinggi halaman */
+}
+
+/* Mengatur posisi modal di tengah */
+.modal-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%; /* Pastikan lebar dialog penuh */
+  height: 100%; /* Pastikan tinggi dialog penuh */
+}
+
+/* Styling untuk modal content */
+.modal-content {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk modal */
+  padding: 40px; /* Membuat padding lebih besar untuk card */
+  width: 500px; /* Tentukan lebar card/modal lebih besar */
+  max-width: 70%; /* Memastikan modal tidak melampaui lebar layar */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto; /* Membuat modal tetap di tengah secara horizontal */
+}
+
+/* Efek hover untuk modal */
+.modal-content:hover {
+  transform: translateY(-5px); /* Efek hover - angkat modal */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Shadow lebih besar saat hover */
+}
+
+/* Header modal */
+.modal-header {
+  background-color: #2ecc71;
+  padding: 5px 10px; /* Mengubah padding top dan bottom menjadi lebih kecil */
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid #121212;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* Body modal */
+.modal-body {
+  padding: 15px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* Tombol dalam modal */
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-footer .btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Tombol Yes */
+.modal-footer .btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.modal-footer .btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Tombol No */
+.modal-footer .btn-secondary {
+  background-color: #bdc3c7;
+  color: white;
+  text-decoration: none;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #95a5a6;
+}
+
+/* Responsif: Ketika lebar layar kecil, modal akan menggunakan 70% dari container */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 80%; /* Modal akan menggunakan 80% dari lebar layar */
+  }
+}
+
+/* Responsif: Ketika lebar layar sangat kecil, modal akan menggunakan 90% dari container */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 90%; /* Modal akan menggunakan 90% dari lebar layar */
+  }
+}

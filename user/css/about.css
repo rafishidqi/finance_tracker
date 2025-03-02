@@ -1,0 +1,248 @@
+/* Style untuk container utama */
+.container.finance-tracker {
+  margin: 20px;
+  padding: 30px;
+  max-width: 70%;
+  background-color: #1e1e1e; /* Warna utama tema gelap */
+  border: 1px solid #333; /* Batas lembut untuk tema gelap */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Bayangan lebih gelap */
+  color: #f1f1f1; /* Warna teks terang */
+  overflow: auto;
+}
+
+/* Style untuk heading utama */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #4caf50; /* Warna biru terang */
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* Style untuk sub-heading */
+h2.finance-tracker {
+  color: #f1f1f1; /* Warna putih terang */
+  margin-top: 20px;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+/* Style untuk paragraf */
+p {
+  text-align: justify;
+  line-height: 1.8;
+  margin: 10px 0;
+  color: #d0d0d0; /* Warna teks abu-abu terang */
+  font-size: 1em;
+}
+
+/* Style untuk list */
+ul.feature-list {
+  margin-left: 20px;
+  line-height: 1.8;
+  color: #d0d0d0;
+}
+
+ul li.feature-list {
+  margin-bottom: 10px;
+}
+
+/* Highlight teks tertentu */
+.highlight {
+  color: #4caf50; /* Warna biru terang untuk teks penting */
+  font-weight: bold;
+}
+
+/* Style untuk card */
+.card.finance-tracker {
+  background-color: #1e1e1e; /* Warna utama tema gelap */
+  border: 1px solid #333; /* Garis pembatas halus */
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Bayangan lebih gelap */
+  color: #f1f1f1;
+}
+
+.card-header.finance-tracker {
+  background-color: #333; /* Header kartu lebih gelap */
+  color: #4caf50; /* Teks header biru terang */
+  padding: 10px;
+  font-size: 1.2em;
+  border-bottom: 1px solid #444;
+  border-radius: 6px 6px 0 0;
+}
+
+.card-body.finance-tracker {
+  padding: 15px;
+}
+
+/* Style untuk tombol */
+.btn.finance-tracker {
+  background-color: #333; /* Warna tombol gelap */
+  color: #f1f1f1; /* Teks tombol terang */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover.finance-tracker {
+  background-color: #4caf50; /* Warna hover tombol */
+  color: #1e1e1e; /* Kontras warna teks */
+}
+
+.btn-warning.finance-tracker {
+  background-color: #ffaa00;
+  color: #1e1e1e;
+}
+
+.btn-danger.finance-tracker {
+  background-color: #ff3333;
+  color: #1e1e1e;
+}
+
+/* Style untuk footer */
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #888; /* Warna abu-abu terang */
+}
+
+/* Style untuk link */
+a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container.finance-tracker {
+    margin-left: 0;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2.finance-tracker {
+    font-size: 1.3em;
+  }
+
+  p,
+  ul {
+    font-size: 0.9em;
+  }
+}
+
+/* Custom scrollbar styling */
+.container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.container.finance-tracker::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 10px;
+}
+
+.container.finance-tracker::-webkit-scrollbar-thumb {
+  background: #4caf50;
+  border-radius: 10px;
+  border: 2px solid #1e1e1e;
+}
+
+.container.finance-tracker::-webkit-scrollbar-thumb:hover {
+  background: #388e3c;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between; /* Mengatur card agar terpisah dengan ruang rata */
+  align-items: stretch; /* Menjaga tinggi card agar sama */
+  flex-wrap: wrap; /* Memungkinkan card membungkus pada layar kecil */
+  gap: 20px; /* Menambahkan jarak antar card */
+  padding: 20px; /* Menambahkan padding untuk ruang di sekitar card */
+  height: auto; /* Menyesuaikan tinggi container sesuai konten */
+}
+
+/* Card Styling */
+.card {
+  background-color: var(--card-bg-color);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px; /* Ukuran card */
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h2 {
+  font-weight: bold;
+  color: var(--primary-text-color);
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--secondary-text-color);
+  margin-top: 10px;
+}
+
+.card span {
+  font-weight: bold;
+  color: var(--primary-text-color);
+}
+
+/* Card-specific Border Colors for Totals */
+.card-total.my-balance {
+  border-left: 5px solid #8e44ad; /* Purple for my balance */
+}
+
+.card-total.income {
+  border-left: 5px solid #2ecc71; /* Green for income */
+}
+
+.card-total.outcome {
+  border-left: 5px solid #e74c3c; /* Red for expense */
+}
+
+/* Chart-specific Border Colors */
+.chart-card.my-balance {
+  border-top: 5px solid #8e44ad; /* Purple for my balance */
+}
+
+.chart-card.income {
+  border-top: 5px solid #2ecc71; /* Green for income */
+}
+
+.chart-card.expense {
+  border-top: 5px solid #e74c3c; /* Red for expense */
+}
+
+.card-container a {
+  text-decoration: none;
+}
+
+.card-container h3 {
+  color: white;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: scale(1.05); /* increase the scale on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a subtle shadow on hover */
+}

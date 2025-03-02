@@ -1,0 +1,380 @@
+/* General Theme Colors */
+:root {
+  --primary-bg-color: #121212; /* Latar belakang utama */
+  --card-bg-color: #1e1e1e; /* Latar belakang elemen */
+  --primary-text-color: #ffffff; /* Teks utama */
+  --secondary-text-color: #b3b3b3; /* Teks sekunder */
+  --accent-color: #4caf50; /* Warna aksen hijau */
+  --hover-accent-color: #388e3c; /* Warna hover aksen */
+  --navbar-bg: linear-gradient(90deg, #333333, #4caf50); /* Warna navbar */
+}
+
+/* Global Styles */
+html,
+body {
+  font-family: Arial, sans-serif;
+  overflow: auto;
+  height: 100%;
+  margin: 0;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: 
+    /* Diagonal slices */ radial-gradient(
+      circle at 100% 50%,
+      #ff00cc 0% 2%,
+      #00ffcc 3% 5%,
+      transparent 6%
+    ),
+    /* Offset dots */
+      radial-gradient(
+        circle at 0% 50%,
+        #ff00cc 0% 2%,
+        #00ffcc 3% 5%,
+        transparent 6%
+      ),
+    /* Wave-like pattern */
+      radial-gradient(ellipse at 50% 0%, #3300ff 0% 3%, transparent 4%) 10px
+      10px,
+    /* Scattered elements */
+      radial-gradient(
+        circle at 50% 50%,
+        #00ffcc 0% 1%,
+        #ff00cc 2% 3%,
+        #3300ff 4% 5%,
+        transparent 6%
+      )
+      20px 20px,
+    /* Background texture */
+      repeating-linear-gradient(
+        45deg,
+        #1a1a1a,
+        #1a1a1a 10px,
+        #242424 10px,
+        #242424 20px
+      );
+  background-size: 50px 50px, 50px 50px, 40px 40px, 60px 60px, 100% 100%;
+  animation: shift 15s linear infinite;
+}
+
+@keyframes shift {
+  0% {
+    background-position: 0 0, 0 0, 10px 10px, 20px 20px, 0 0;
+  }
+  100% {
+    background-position: 50px 50px, -50px -50px, 60px 60px, 80px 80px, 0 0;
+  }
+}
+
+/* From Uiverse.io by 1k24bytes */
+.header {
+  margin-top: 60px;
+  text-align: center;
+  padding: 150px 0 0 0;
+  background: var(--card-bg-color);
+  width: 100%;
+  height: 100vh;
+  background: 
+    /* Diagonal slices */ radial-gradient(
+      circle at 100% 50%,
+      #ff00cc 0% 2%,
+      #00ffcc 3% 5%,
+      transparent 6%
+    ),
+    /* Offset dots */
+      radial-gradient(
+        circle at 0% 50%,
+        #ff00cc 0% 2%,
+        #00ffcc 3% 5%,
+        transparent 6%
+      ),
+    /* Wave-like pattern */
+      radial-gradient(ellipse at 50% 0%, #3300ff 0% 3%, transparent 4%) 10px
+      10px,
+    /* Scattered elements */
+      radial-gradient(
+        circle at 50% 50%,
+        #00ffcc 0% 1%,
+        #ff00cc 2% 3%,
+        #3300ff 4% 5%,
+        transparent 6%
+      )
+      20px 20px,
+    /* Background texture */
+      repeating-linear-gradient(
+        45deg,
+        #1a1a1a,
+        #1a1a1a 10px,
+        #242424 10px,
+        #242424 20px
+      );
+  background-size: 50px 50px, 50px 50px, 40px 40px, 60px 60px, 100% 100%;
+  animation: shift 15s linear infinite;
+}
+
+@keyframes shift {
+  0% {
+    background-position: 0 0, 0 0, 10px 10px, 20px 20px, 0 0;
+  }
+  100% {
+    background-position: 50px 50px, -50px -50px, 60px 60px, 80px 80px, 0 0;
+  }
+}
+/* From Uiverse.io by 1k24bytes */
+.features-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 50px 20px;
+  background: 
+    /* Diagonal slices */ radial-gradient(
+      circle at 100% 50%,
+      #ff00cc 0% 2%,
+      #00ffcc 3% 5%,
+      transparent 6%
+    ),
+    /* Offset dots */
+      radial-gradient(
+        circle at 0% 50%,
+        #ff00cc 0% 2%,
+        #00ffcc 3% 5%,
+        transparent 6%
+      ),
+    /* Wave-like pattern */
+      radial-gradient(ellipse at 50% 0%, #3300ff 0% 3%, transparent 4%) 10px
+      10px,
+    /* Scattered elements */
+      radial-gradient(
+        circle at 50% 50%,
+        #00ffcc 0% 1%,
+        #ff00cc 2% 3%,
+        #3300ff 4% 5%,
+        transparent 6%
+      )
+      20px 20px,
+    /* Background texture */
+      repeating-linear-gradient(
+        45deg,
+        #1a1a1a,
+        #1a1a1a 10px,
+        #242424 10px,
+        #242424 20px
+      );
+  background-size: 50px 50px, 50px 50px, 40px 40px, 60px 60px, 100% 100%;
+  animation: shift 15s linear infinite;
+}
+
+@keyframes shift {
+  0% {
+    background-position: 0 0, 0 0, 10px 10px, 20px 20px, 0 0;
+  }
+  100% {
+    background-position: 50px 50px, -50px -50px, 60px 60px, 80px 80px, 0 0;
+  }
+}
+
+main {
+  flex: 1;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--navbar-bg);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.navbar-brand span {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-text-color);
+}
+
+.navbar-list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding-right: 30px;
+}
+
+.navbar-list li {
+  margin-left: 20px;
+}
+
+.navbar-list li a {
+  color: var(--primary-text-color);
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 15px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-list li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Header Section */
+/* .header {
+  
+} */
+
+.header h1 {
+  font-size: 64px;
+  margin-bottom: 10px;
+  color: var(--primary-text-color);
+}
+
+.header p {
+  font-size: 20px;
+  margin-bottom: 40px;
+  color: var(--secondary-text-color);
+}
+
+.tombol {
+  width: 150px;
+  height: 50px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: var(--accent-color);
+  color: var(--primary-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.tombol:hover {
+  background-color: var(--hover-accent-color);
+}
+
+/* Features and Benefits Section */
+/* .features-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 50px 20px;
+} */
+
+.features-section,
+.benefits-section {
+  flex: 1;
+  min-width: 300px;
+  background-color: var(--card-bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: var(--primary-text-color);
+}
+
+.features-section h2,
+.benefits-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.feature-item,
+.benefit-item {
+  margin-bottom: 20px;
+}
+
+.feature-item h3,
+.benefit-item h3 {
+  font-size: 20px;
+  color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--card-bg-color);
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 36px;
+  }
+
+  .header p {
+    font-size: 18px;
+  }
+
+  .features-benefits {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features-section,
+  .benefits-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .header button {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 30px;
+  }
+
+  .navbar-list li a {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+
+  .navbar-brand span {
+    font-size: 18px;
+  }
+}
+
+/* Custom scrollbar styling */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--card-bg-color);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 10px;
+  border: 2px solid var(--card-bg-color);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-accent-color);
+}

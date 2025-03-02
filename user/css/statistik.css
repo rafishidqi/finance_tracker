@@ -1,0 +1,58 @@
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Card container */
+.card {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Card title */
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #b3b3b3;
+}
+
+/* Card body containing the chart */
+.card-body {
+  position: relative;
+  height: 400px; /* Set height of the chart container */
+}
+
+/* Ensure the chart is responsive and fits within the card */
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-title {
+    font-size: 1.1rem;
+  }
+}

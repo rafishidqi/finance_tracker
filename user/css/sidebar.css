@@ -1,0 +1,68 @@
+:root {
+  --primary-bg-color: #121212; /* Latar belakang utama */
+  --card-bg-color: #1e1e1e; /* Latar belakang elemen */
+  --primary-text-color: #ffffff; /* Teks utama */
+  --secondary-text-color: #b3b3b3; /* Teks sekunder */
+  --accent-color: #4caf50; /* Warna aksen hijau */
+  --hover-accent-color: #388e3c; /* Warna hover aksen */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--card-bg-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Mengatur elemen sidebar dalam kolom */
+  height: 100%; /* Mengatur tinggi sidebar agar memenuhi kontainer */
+}
+
+.sidebar h2 {
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 20px; /* Jarak di bawah judul */
+}
+
+.sidebar nav {
+  flex-grow: 1; /* Membuat nav mengisi sisa ruang */
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+  color: var(--primary-text-color);
+  text-decoration: none;
+  padding: 10px;
+  display: flex;
+  align-items: center; /* Mengatur ikon dan teks berada di tengah vertikal */
+  justify-content: flex-start; /* Menjaga ikon di sebelah kiri */
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  gap: 8px;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: var(--hover-accent-color);
+}
+
+.logout {
+  color: var(--primary-text-color); /* Warna teks logout */
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  background-color: transparent; /* Latar belakang awal */
+}
+
+.sidebar nav ul li a.logout:hover,
+.logout:hover {
+  background-color: #e74c3c; /* Warna merah saat hover */
+  color: #ffffff; /* Warna teks putih untuk kontras */
+}

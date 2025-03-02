@@ -1,0 +1,324 @@
+/* General Theme Colors */
+:root {
+  --primary-color: #ffffff; /* Warna teks utama: putih */
+  --secondary-color: #cfcfcf; /* Warna teks sekunder: abu-abu terang */
+  --card-background-color: #1e1e1e; /* Warna latar belakang kartu */
+  --background-color: #121212; /* Warna latar belakang utama */
+  --button-color: #4caf50;
+  --button-hover-color: #388e3c; /* Warna hover tombol */
+  --primary-bg-color: #121212; /* Warna latar belakang utama */
+  --primary-text-color: #ffffff; /* Warna teks utama */
+  --navbar-bg: linear-gradient(90deg, #333333, #4caf50);
+}
+
+/* Global Styles */
+/* html,
+body {
+  font-family: Arial, sans-serif;
+  overflow: auto;
+  height: 100%;
+  margin: 0;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  overflow: hidden;
+} */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html,
+body {
+  font-family: Arial, sans-serif;
+  overflow: auto;
+  height: 100%;
+  margin: 0;
+  color: var(--primary-text-color);
+  background: 
+    /* Diagonal slices */ radial-gradient(
+      circle at 100% 50%,
+      #ff00cc 0% 2%,
+      #00ffcc 3% 5%,
+      transparent 6%
+    ),
+    /* Offset dots */
+      radial-gradient(
+        circle at 0% 50%,
+        #ff00cc 0% 2%,
+        #00ffcc 3% 5%,
+        transparent 6%
+      ),
+    /* Wave-like pattern */
+      radial-gradient(ellipse at 50% 0%, #3300ff 0% 3%, transparent 4%) 10px
+      10px,
+    /* Scattered elements */
+      radial-gradient(
+        circle at 50% 50%,
+        #00ffcc 0% 1%,
+        #ff00cc 2% 3%,
+        #3300ff 4% 5%,
+        transparent 6%
+      )
+      20px 20px,
+    /* Background texture */
+      repeating-linear-gradient(
+        45deg,
+        #1a1a1a,
+        #1a1a1a 10px,
+        #242424 10px,
+        #242424 20px
+      );
+  background-size: 50px 50px, 50px 50px, 40px 40px, 60px 60px, 100% 100%;
+  animation: shift 15s linear infinite;
+}
+
+@keyframes shift {
+  0% {
+    background-position: 0 0, 0 0, 10px 10px, 20px 20px, 0 0;
+  }
+  100% {
+    background-position: 50px 50px, -50px -50px, 60px 60px, 80px 80px, 0 0;
+  }
+}
+
+main {
+  flex: 1;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--navbar-bg);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.navbar-brand span {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-text-color);
+}
+
+.navbar-list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding-right: 30px;
+}
+
+.navbar-list li {
+  margin-left: 20px;
+}
+
+.navbar-list li a {
+  color: var(--primary-text-color);
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 15px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-list li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Login Container */
+/* .login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 95px;
+  background-color: var(--background-color); 
+} */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 95px;
+}
+
+/* Login Card */
+.login-card {
+  background-color: var(--card-background-color); /* Latar belakang kartu */
+  border-radius: 10px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Tambahkan efek shadow untuk kedalaman */
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Header and Text */
+.login-card h1 {
+  color: var(--primary-color); /* Teks terang untuk heading */
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.login-card p {
+  color: var(--secondary-color); /* Teks sekunder */
+  margin-bottom: 20px;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+  margin-right: 23px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: var(--primary-color); /* Teks label terang */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #333333; /* Border abu-abu gelap */
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: var(--background-color); /* Latar belakang input */
+  color: var(--primary-color); /* Teks input terang */
+}
+
+/* Button */
+.login-button {
+  background-color: var(--button-color); /* Tombol menyatu dengan tema kartu */
+  color: var(--primary-color);
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-button:hover {
+  background-color: var(--button-hover-color); /* Efek hover */
+}
+
+.signup-button {
+  color: var(--primary-color);
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-button:hover {
+  color: var(--button-hover-color);
+}
+
+/* Signup Link */
+.signup-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--secondary-color); /* Teks sekunder terang */
+}
+
+.signup-link a {
+  color: var(--primary-color); /* Teks link terang */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.login-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--secondary-color); /* Teks sekunder terang */
+}
+
+.login-link a {
+  color: var(--primary-color); /* Teks link terang */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+.info {
+  color: blue;
+}
+
+/* Responsiveness */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 20px 15px;
+  }
+
+  .login-card h1 {
+    font-size: 20px;
+  }
+
+  .login-button {
+    font-size: 14px;
+  }
+}
+
+/* Custom scrollbar styling */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--card-background-color); /* Warna gelap untuk track */
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--button-hover-color); /* Warna hover */
+  border-radius: 10px;
+  border: 2px solid var(--card-background-color);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #4c4c4c; /* Warna hover lebih terang */
+}

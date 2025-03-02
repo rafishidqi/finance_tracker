@@ -1,0 +1,81 @@
+/* body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  height: 100vh; 
+  overflow: hidden;
+  width: 100%;
+} */
+
+body {
+  /* Basic dimensions and centering */
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  color: var(--primary-text-color);
+  width: 100%;
+
+  /* Dark mode colors and gradient */
+  background: #121212; /* Fallback for browsers that don't support gradients */
+  background: linear-gradient(
+    135deg,
+    #121212 25%,
+    #1a1a1a 25%,
+    #1a1a1a 50%,
+    #121212 50%,
+    #121212 75%,
+    #1a1a1a 75%,
+    #1a1a1a
+  );
+  background-size: 40px 40px;
+
+  /* Animation */
+  animation: move 4s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+/* CSS untuk wrapper
+.wrapper {
+  display: flex; 
+  flex-direction: column; 
+  height: 100vh;
+}
+
+/* CSS untuk container
+.container {
+  display: flex; 
+  flex-grow: 1; 
+  height: 100%;
+} */
+
+/* Custom scrollbar styling */
+.content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 10px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: #4caf50;
+  border-radius: 10px;
+  border: 2px solid #1e1e1e;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background: #388e3c;
+}

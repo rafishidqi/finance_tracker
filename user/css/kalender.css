@@ -1,0 +1,112 @@
+/* =================================== */
+/*           GENERAL THEME             */
+/* =================================== */
+:root {
+  --primary-bg-color: #121212; /* Latar belakang utama */
+  --card-bg-color: #1e1e1e; /* Latar belakang elemen */
+  --primary-text-color: #ffffff; /* Teks utama */
+  --secondary-text-color: #b3b3b3; /* Teks sekunder */
+  --accent-color: #4caf50; /* Warna aksen hijau */
+  --hover-accent-color: #388e3c; /* Warna hover aksen */
+  --expense-color: #f44336; /* Warna untuk Expense */
+  --hover-expense-color: #d32f2f; /* Hover warna Expense */
+}
+
+/* =================================== */
+/*             KALENDER                */
+/* =================================== */
+#calendar {
+  width: 80%;
+  max-width: 70%;
+  margin: 0 auto;
+  background-color: var(--card-bg-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: var(--primary-text-color);
+  overflow-y: auto;
+}
+
+/* =================================== */
+/*            EVENT STYLING            */
+/* =================================== */
+.fc-event {
+  border: none;
+  color: var(--primary-text-color); /* Teks event */
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: normal; /* Membungkus teks */
+  word-wrap: break-word; /* Pecah kata panjang */
+  overflow: hidden;
+  transition: 0.3s ease; /* Transisi halus */
+}
+
+/* Warna dan efek hover event Income */
+.fc-event[data-type="income"] {
+  background-color: var(--accent-color);
+  border-color: var(--hover-accent-color);
+}
+
+.fc-event[data-type="income"]:hover {
+  background-color: var(--hover-accent-color);
+  opacity: 0.9;
+}
+
+/* Warna dan efek hover event Expense */
+.fc-event[data-type="expense"] {
+  background-color: var(--expense-color);
+  border-color: var(--hover-expense-color);
+}
+
+.fc-event[data-type="expense"]:hover {
+  background-color: var(--hover-expense-color);
+  opacity: 0.9;
+}
+
+/* Teks di dalam event */
+.fc-event-title {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
+  line-height: 1.2;
+  max-height: 60px; /* Maksimal 3 baris teks */
+  display: block;
+}
+
+/* =================================== */
+/*          RESPONSIVE DESIGN          */
+/* =================================== */
+@media (max-width: 768px) {
+  #calendar {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+/* =================================== */
+/*       TOOLTIP DAN POP-UP CUSTOM     */
+/* =================================== */
+/* Sembunyikan tooltip bawaan */
+.fc-tooltip {
+  display: none;
+}
+
+.fc-scroller::-webkit-scrollbar {
+  width: 10px;
+}
+
+.fc-scroller::-webkit-scrollbar-track {
+  background: var(--card-bg-color);
+  border-radius: 10px;
+}
+
+.fc-scroller::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 10px;
+  border: 2px solid var(--card-bg-color);
+}
+
+.fc-scroller::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-accent-color);
+}

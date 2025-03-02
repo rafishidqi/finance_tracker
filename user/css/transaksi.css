@@ -1,0 +1,278 @@
+:root {
+  --primary-bg-color: #121212; /* Latar belakang utama */
+  --card-bg-color: #1e1e1e; /* Latar belakang elemen */
+  --primary-text-color: #ffffff; /* Teks utama */
+  --secondary-text-color: #b3b3b3; /* Teks sekunder */
+  --accent-color: #4caf50; /* Warna aksen hijau */
+  --hover-accent-color: #388e3c; /* Warna hover aksen */
+  --chart-bg-color: #333333; /* Warna latar belakang chart */
+}
+
+/* Form Filter */
+#filter-form {
+  display: none; /* Default disembunyikan */
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--card-bg-color);
+  color: var(--primary-text-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999; /* Pastikan form di atas transaksi */
+  width: 40%; /* Atur lebar form */
+}
+
+/* Styling ketika form muncul */
+#filter-form.show {
+  display: block;
+  animation: slide-in 0.3s ease-in-out;
+}
+
+/* Animasi sliding form */
+@keyframes slide-in {
+  from {
+    transform: translateX(-50%) translateY(-100%);
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Styling untuk ikon filter */
+#filter-icon {
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+/* Styling untuk select agar sesuai dengan tema */
+/* Dropdown menu untuk <select> */
+select {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--card-bg-color); /* Latar belakang dropdown */
+  color: #ffffff; /* Warna teks dropdown lebih gelap */
+  border: 1px solid var(--secondary-text-color); /* Border dropdown */
+  border-radius: 5px;
+  font-size: 16px;
+  appearance: none; /* Hilangkan tampilan bawaan browser */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23b3b3b3' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px 10px;
+  margin-bottom: 10px;
+}
+
+.select2-container {
+  margin-right: 10px;
+}
+
+select option {
+  background-color: var(--card-bg-color); /* Warna latar belakang opsi */
+  color: #ffffff; /* Warna teks opsi lebih gelap */
+}
+
+/* Placeholder styling untuk invalid select */
+select:invalid {
+  color: var(--primary-text-color); /* Warna placeholder */
+  font-style: italic;
+}
+
+/* Styling select2 jika digunakan */
+.select2-container .select2-selection--single {
+  height: 40px;
+  background-color: var(--card-bg-color); /* Sama dengan input */
+  color: #ffffff; /* Teks utama lebih gelap */
+  border: 1px solid var(--secondary-text-color); /* Border yang konsisten */
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.select2-dropdown {
+  background-color: var(--card-bg-color);
+  border: 1px solid #aaa;
+  color: #ffffff; /* Warna teks dropdown lebih gelap */
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  left: -100000px;
+  width: 100%;
+  z-index: 1051;
+}
+
+/* Styling tombol Filter dan Reset */
+#filter-form button {
+  font-family: "Poppins", sans-serif; /* Menambahkan font Poppins */
+  background-color: var(--accent-color);
+  color: var(--primary-text-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 25%;
+  margin-right: 4%;
+  transition: background-color 0.3s ease;
+}
+
+#filter-form button:hover {
+  background-color: var(--hover-accent-color);
+}
+
+/* Styling tombol Reset */
+#filter-form a.btn-secondary {
+  text-decoration: none;
+  background-color: #555;
+  color: var(--primary-text-color);
+  padding: 8px 10px;
+  border-radius: 5px;
+  width: 25%;
+  text-align: center;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#filter-form a.btn-secondary:hover {
+  background-color: #444;
+}
+
+/* Container untuk card yang responsif */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Membungkus card ke baris baru jika ruang tidak cukup */
+  gap: 20px; /* Jarak antar card */
+  padding: 20px;
+  justify-content: flex-start; /* Menjaga card tetap di kiri */
+  width: 100%; /* Menggunakan 100% lebar layar */
+  max-width: 70%; /* Maksimum lebar container adalah 70% dari lebar halaman */
+  margin: 0 auto; /* Membuat container berada di tengah halaman */
+  overflow: auto;
+}
+
+/* Styling untuk setiap card */
+.card {
+  flex: 1 1 calc(33.33% - 20px); /* Setiap card mengambil 1/3 dari container, dikurangi gap */
+  box-sizing: border-box; /* Agar padding dan border tidak mempengaruhi ukuran */
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk card */
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek transisi saat hover */
+}
+
+/* Efek hover untuk card */
+.card:hover {
+  transform: translateY(-5px); /* Efek hover - angkat card */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Shadow lebih besar saat hover */
+}
+
+/* Header card */
+.card-header {
+  background-color: #2ecc71;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #121212;
+  border-radius: 10px;
+}
+/* Header card */
+.description-header {
+  background-color: #007bff;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #121212;
+  border-radius: 10px;
+}
+
+/* Body card */
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.card a {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.card a:hover {
+  background-color: #0056b3;
+}
+
+.card a.btn-warning {
+  background-color: #ffc107;
+  margin-right: 10px;
+}
+
+.card a.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.card a.btn-danger {
+  background-color: #dc3545;
+}
+
+.card a.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.uploaded-image {
+  max-width: 200px; /* Mengatur lebar maksimal gambar */
+  max-height: 200px; /* Mengatur tinggi maksimal gambar */
+  object-fit: cover; /* Memastikan gambar tetap terjaga proporsinya */
+}
+
+/* Responsif: Ketika lebar layar kecil, card akan mengambil lebar 50% dari container */
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 calc(50% - 20px); /* Setiap card akan mengambil 1/2 lebar container */
+  }
+}
+
+/* Responsif: Ketika lebar layar sangat kecil, card akan mengambil lebar 100% dari container */
+@media (max-width: 480px) {
+  .card {
+    flex: 1 1 100%; /* Setiap card akan mengambil 100% lebar container */
+  }
+}
+
+/* Custom scrollbar styling */
+.card-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.card-container::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 10px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background: #4caf50;
+  border-radius: 10px;
+  border: 2px solid #1e1e1e;
+}
+
+.card-container::-webkit-scrollbar-thumb:hover {
+  background: #388e3c;
+}

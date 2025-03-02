@@ -1,0 +1,216 @@
+/* General Theme Colors */
+:root {
+  --primary-bg-color: #121212; /* Latar belakang utama */
+  --card-bg-color: #1e1e1e; /* Latar belakang elemen */
+  --primary-text-color: #ffffff; /* Teks utama */
+  --secondary-text-color: #b3b3b3; /* Teks sekunder */
+  --accent-color: #4caf50; /* Warna aksen hijau */
+  --hover-accent-color: #388e3c; /* Warna hover aksen */
+}
+
+.bungkus-content {
+  display: flex; /* Mengaktifkan Flexbox */
+  justify-content: center; /* Mencenterkan secara horizontal */
+  align-items: center;
+  width: 70%;
+  margin-left: 40px;
+  overflow: auto;
+}
+
+.main-content {
+  padding: 20px;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.main-container {
+  display: flex; /* Mengaktifkan Flexbox */
+  justify-content: center; /* Mencenterkan secara horizontal */
+  align-items: center; /* Mencenterkan secara vertikal */
+}
+
+.main-header {
+  color: var(--accent-color);
+  font-size: 14px;
+  margin-bottom: 20px;
+  display: flex; /* Mengaktifkan Flexbox */
+  justify-content: center; /* Mencenterkan secara horizontal */
+  align-items: center; /* Mencenterkan secara vertikal */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inout-table-section {
+  background-color: var(--card-bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 50vw;
+}
+
+.inout-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inout-table td {
+  padding: 10px;
+  vertical-align: middle;
+  color: var(--primary-text-color);
+  font-size: 16px;
+}
+
+.inout-table td:first-child {
+  font-weight: bold;
+  text-align: right;
+  padding-right: 15px;
+  color: var(--secondary-text-color);
+}
+
+.inout-table td:last-child {
+  text-align: left;
+}
+
+.inout-table input,
+.inout-table select,
+.inout-table textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--card-bg-color);
+  color: var(--primary-text-color);
+  border: 1px solid var(--secondary-text-color);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.inout-table input::placeholder,
+.inout-table textarea::placeholder {
+  color: var(--secondary-text-color);
+  font-style: italic;
+}
+
+.inout-table textarea {
+  resize: none;
+  height: 80px;
+}
+
+.add-inout-btn {
+  background-color: var(--accent-color);
+  color: var(--primary-text-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-inout-btn:hover {
+  background-color: var(--hover-accent-color);
+  transform: scale(1.05);
+}
+
+/* Styling untuk select agar sesuai dengan tema */
+/* Dropdown menu untuk <select> */
+select {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--card-bg-color); /* Latar belakang dropdown */
+  color: var(--primary-text-color); /* Warna teks dropdown */
+  border: 1px solid var(--secondary-text-color); /* Border dropdown */
+  border-radius: 5px;
+  font-size: 16px;
+  appearance: none; /* Hilangkan tampilan bawaan browser */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23b3b3b3' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px 10px;
+}
+
+select option {
+  background-color: var(--card-bg-color); /* Warna latar belakang opsi */
+  color: var(--primary-text-color); /* Warna teks opsi */
+}
+
+/* Placeholder styling untuk invalid select */
+select:invalid {
+  color: var(--secondary-text-color); /* Warna placeholder */
+  font-style: italic;
+}
+
+/* Styling select2 jika digunakan */
+.select2-container .select2-selection--single {
+  height: 40px;
+  background-color: var(--card-bg-color); /* Sama dengan input */
+  color: var(--primary-text-color); /* Teks utama */
+  border: 1px solid var(--secondary-text-color); /* Border yang konsisten */
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.select2-dropdown {
+  background-color: var(--card-bg-color);
+  border: 1px solid #aaa;
+  color: var(--secondary-text-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  left: -100000px;
+  width: 100%;
+  z-index: 1051;
+}
+
+.select2-selection--single .select2-selection__rendered {
+  color: var(--secondary-text-color) !important; /* Teks tetap terang */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .inout-table td:first-child {
+    text-align: left;
+    padding-right: 0;
+  }
+
+  .inout-table td {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .inout-table td:last-child {
+    text-align: left;
+  }
+}
+
+.uploaded-image {
+  max-width: 200px; /* Mengatur lebar maksimal gambar */
+  max-height: 200px; /* Mengatur tinggi maksimal gambar */
+  object-fit: cover; /* Memastikan gambar tetap terjaga proporsinya */
+}
+
+/* Custom scrollbar styling */
+.bungkus-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.bungkus-content::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 10px;
+}
+
+.bungkus-content::-webkit-scrollbar-thumb {
+  background: #4caf50;
+  border-radius: 10px;
+  border: 2px solid #1e1e1e;
+}
+
+.bungkus-content::-webkit-scrollbar-thumb:hover {
+  background: #388e3c;
+}
